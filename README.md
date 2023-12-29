@@ -10,8 +10,9 @@ The [Bootstrap file](./src/Core/Bootstrap.php) concentrates the entire applicati
 for _controllers_, _routing_, etc.
 
 To introduce new endpoints in your API, you simply need to create a _controller_ class by
-implementing the [`Controller` interface](./src/Core/Infrastructure/Http/Controller.php) and its `routes` method.
-Then, describe routing resources to their actions. Finally, map new controller in `Bootstrap.php`.
+implementing the [`Controller`](./src/Core/Infrastructure/Http/Controller.php) interface and its `routes` method.
+Then, describe routing resources to their actions. Finally,
+map the new controller in [ApplicationControllerProvider.php](src/API/Http/Provider/ApplicationControllerProvider.php).
 
 _Voilà!_ 🎉
 

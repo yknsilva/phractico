@@ -2,14 +2,12 @@
 
 namespace Phractico\Tests\Core\Infrastructure\Http\Request;
 
-use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Phractico\Core\Infrastructure\Http\Request\Route;
 use Phractico\Core\Infrastructure\Http\Request\RouteCollection;
-use PHPUnit\Framework\TestCase;
 use Phractico\Tests\Helpers\API\Http\FakeController;
 
-#[CoversClass(RouteCollection::class)]
-final class RouteCollectionTest extends TestCase
+class RouteCollectionTest extends TestCase
 {
     public function testCanDefineRoutesForController(): void
     {

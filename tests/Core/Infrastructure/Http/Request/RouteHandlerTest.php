@@ -3,13 +3,11 @@
 namespace Phractico\Tests\Core\Infrastructure\Http\Request;
 
 use GuzzleHttp\Psr7\Request;
-use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 use Phractico\Core\Infrastructure\Http\Request\RouteHandler;
 use Phractico\Tests\Helpers\API\Http\FakeController;
 
-#[CoversClass(RouteHandler::class)]
-final class RouteHandlerTest extends TestCase
+class RouteHandlerTest extends TestCase
 {
     public function testHandleShouldRouteRequestToExpectedController(): void
     {
@@ -26,7 +24,7 @@ final class RouteHandlerTest extends TestCase
         $this->assertEquals(json_encode(['message' => 'FakeController']), $responseBody);
     }
 
-    public function testHandle_ShouldReturnInternalServerErrorOnUndefinedControllerMapping(): void
+    public function testHandleShouldReturnInternalServerErrorOnUndefinedControllerMapping(): void
     {
         $controllerMapping = [];
         RouteHandler::init($controllerMapping);

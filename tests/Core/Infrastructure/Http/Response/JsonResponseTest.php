@@ -4,12 +4,10 @@ declare(strict_types=1);
 
 namespace Phractico\Tests\Core\Infrastructure\Http\Response;
 
-use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 use Phractico\Core\Infrastructure\Http\Response\JsonResponse;
 
-#[CoversClass(JsonResponse::class)]
-final class JsonResponseTest extends TestCase
+class JsonResponseTest extends TestCase
 {
     public function testRenderShouldParseBodyAsJson(): void
     {

@@ -2,12 +2,10 @@
 
 namespace Phractico\Tests\Core\Infrastructure\Http\Request;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use Phractico\Core\Infrastructure\Http\Request\Route;
 use PHPUnit\Framework\TestCase;
+use Phractico\Core\Infrastructure\Http\Request\Route;
 
-#[CoversClass(Route::class)]
-final class RouteTest extends TestCase
+class RouteTest extends TestCase
 {
     public function testMatchShouldReturnTrueForRouteComparison(): void
     {
