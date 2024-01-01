@@ -24,4 +24,20 @@ class RequestHandlerTest extends TestCase
         $this->assertEquals($requestMethod, $handledRequest->getMethod());
         $this->assertEquals($requestUri, (string) $handledRequest->getUri());
     }
+
+    public function testGetIncomingRequestShouldReturnHandledRequest(): void
+    {
+        $requestMethod = 'POST';
+        $requestUri = '/test';
+
+        $httpRequestInterceptorStub = $this->createStub(HttpRequestInterceptor::class);
+        $httpRequestInterceptorStub
+            ->method('intercept')
+            ->willReturn(new Request($requestMethod, $requestUri));
+
+        $handledRequest = RequestHandler::handle($httpRequestInterceptorStub);
+        $incomingRequest = RequestHandler::getIncomingRequest();
+
+        $this->assertEquals($handledRequest, $incomingRequest);
+    }
 }

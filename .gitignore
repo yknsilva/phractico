@@ -4,6 +4,7 @@
 
 vendor/
 coverage/
+database/
 
 composer.lock
 *.cache

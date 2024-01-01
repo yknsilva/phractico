@@ -8,8 +8,17 @@ use Psr\Http\Message\RequestInterface;
 
 class RequestHandler
 {
+    private static RequestInterface $incomingRequest;
+
     public static function handle(HttpRequestInterceptor $interceptor): RequestInterface
     {
-        return $interceptor->intercept();
+        $request = $interceptor->intercept();
+        self::$incomingRequest = $request;
+        return $request;
+    }
+
+    public static function getIncomingRequest(): RequestInterface
+    {
+        return self::$incomingRequest;
     }
 }

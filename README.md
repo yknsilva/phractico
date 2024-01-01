@@ -23,6 +23,17 @@ _Voilà!_ 🎉
 
 For examples, see [ExampleController](./src/API/Http/Controller/ExampleController.php).
 
+# Database
+
+Your database connection must be mapped inside [ApplicationDatabaseProvider.php](./src/Database/ApplicationDatabaseProvider.php) class,
+which is consumed by bootstrap file when application is initialized.
+
+By default, **_phractico_** comes with a [SQLite database adapter](./src/Database/Connection/SQLiteAdapter.php)
+assuming database file is located at path `/path/to/phractico/database/database.sqlite`.
+
+If you want to have others adapters, you just need to implement [Connection](./src/Core/Infrastructure/Database/Connection.php)
+and then mapping your new adapter in `ApplicationDatabaseProvider` file.
+
 # Installation
 
 Go fast with **_phractico_** and [phpctl](https://github.com/opencodeco/phpctl):
@@ -40,6 +51,16 @@ phpctl server 8000
 - Perform an HTTP request to ensure everything works fine!
 ```shell
 curl --location 'http://localhost:8000/example'
+```
+
+- Perform an HTTP request to ensure database connection works fine!
+  - **Note:** `sqlite3` PHP extension is required for `SQLiteAdapter`
+```shell
+curl --location --request GET 'http://localhost:8000/exampleDatabase' \
+--header 'Content-Type: application/json' \
+--data '{
+    "test": "database"
+}'
 ```
 
 # Tests & Quality Tools
