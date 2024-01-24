@@ -6,6 +6,7 @@ use GuzzleHttp\Psr7\Request;
 use PHPUnit\Framework\TestCase;
 use Phractico\Application;
 use Phractico\Core\Infrastructure\Database\DatabaseProvider;
+use Phractico\Core\Infrastructure\DI\Container;
 use Phractico\Core\Infrastructure\Http\ControllerProvider;
 use Phractico\Core\Infrastructure\Http\Request\HttpRequestInterceptor;
 use Phractico\Tests\Helpers\API\Http\FakeController;
@@ -30,14 +31,15 @@ class ApplicationTest extends TestCase
             ->method('intercept')
             ->willReturn(new Request('POST', '/fake'));
 
+        $container = Container::create();
+        $container->set(ControllerProvider::class, fn () => $controllerProviderStub);
+        $container->set(DatabaseProvider::class, fn () => $databaseProviderStub);
+        $container->set(HttpRequestInterceptor::class, fn () => $httpRequestInterceptorStub);
+
         $fakeControllerResponse = $fakeController->fake()->render();
         $this->expectOutputString($fakeControllerResponse->getBody()->getContents());
 
-        $application = new Application(
-            $httpRequestInterceptorStub,
-            $controllerProviderStub,
-            $databaseProviderStub,
-        );
+        $application = new Application($container);
         $application->run();
     }
 }

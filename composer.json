@@ -2,9 +2,11 @@
     "name": "yknsilva/phractico",
     "description": "A PHP micro-project for APIs",
     "type": "project",
+    "license": "MIT",
     "authors": [
         {
-            "name": "Yuri Silva"
+            "name": "Yuri Silva",
+            "email": "yknsilva@gmail.com"
         }
     ],
     "require": {

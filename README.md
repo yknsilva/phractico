@@ -1,4 +1,4 @@
-# About phractico
+# [About phractico](#about-phractico)
 
 <p>
     <a href="https://codecov.io/gh/yknsilva/phractico"><img src="https://codecov.io/gh/yknsilva/phractico/branch/main/graph/badge.svg" alt="Coverage"/></a>
@@ -6,7 +6,16 @@
 
 Go fast with **_phractico_**, a PHP micro-project designed to accelerate your API projects with simplicity.
 
-# Usage
+# [Summary](#summary)
+
+- [Usage](#usage)
+- [Database](#database)
+- [Container DI](#container-di)
+- [Installation](#installation)
+- [Tests and Quality Tools](#tests-and-quality-tools)
+- [Contributing](#contributing)
+
+# [Usage](#usage)
 
 **_phractico_** was designed with your precious resource in mind: _time!_ ⌚
 
@@ -23,7 +32,7 @@ _Voilà!_ 🎉
 
 For examples, see [ExampleController](./src/API/Http/Controller/ExampleController.php).
 
-# Database
+# [Database](#database)
 
 Your database connection must be mapped inside [ApplicationDatabaseProvider.php](./src/Database/ApplicationDatabaseProvider.php) class,
 which is consumed by bootstrap file when application is initialized.
@@ -34,7 +43,18 @@ assuming database file is located at path `/path/to/phractico/database/database.
 If you want to have others adapters, you just need to implement [Connection](./src/Core/Infrastructure/Database/Connection.php)
 and then mapping your new adapter in `ApplicationDatabaseProvider` file.
 
-# Installation
+# [Container DI](#container-di)
+
+**_phractico_** uses a dependency container to manage dependencies throughout the application.
+The container and its corresponding dependency mapping are declared in [ApplicationContainer](./src/DI/ApplicationContainer.php).
+During the application's runtime, the dependency container is injected into the application instance
+and then used in application bootstrap phase.
+
+While **_phractico_** includes a [simple container](./src/Core/Infrastructure/DI/Container.php), it is designed
+to support any other dependency injection container that implements the [PSR-11](https://www.php-fig.org/psr/psr-11/),
+such as [PHP-DI](https://php-di.org/).
+
+# [Installation](#installation)
 
 Go fast with **_phractico_** and [phpctl](https://github.com/opencodeco/phpctl):
 
@@ -45,7 +65,7 @@ phpctl composer install
 
 - Run a local server
 ```shell
-phpctl server 8000
+phpctl server 8000 public/
 ```
 
 - Perform an HTTP request to ensure everything works fine!
@@ -63,7 +83,7 @@ curl --location --request GET 'http://localhost:8000/exampleDatabase' \
 }'
 ```
 
-# Tests & Quality Tools
+# [Tests and Quality Tools](#tests-and-quality-tools)
 
 To execute all PHPUnit test suites, run:
 ```shell
@@ -75,6 +95,6 @@ To execute quality tools, run:
 phpctl composer quality
 ```
 
-# Contributing
+# [Contributing](#contributing)
 
 Feel free to explore the project and turn **_phractico_** more practical!
