@@ -1,9 +1,5 @@
 # [About phractico](#about-phractico)
 
-<p>
-    <a href="https://codecov.io/gh/yknsilva/phractico"><img src="https://codecov.io/gh/yknsilva/phractico/branch/main/graph/badge.svg" alt="Coverage"/></a>
-</p>
-
 Go fast with **_phractico_**, a PHP micro-project designed to accelerate your API projects with simplicity.
 
 # [Summary](#summary)
