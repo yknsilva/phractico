@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Phractico\Database;
+namespace App\Database;
 
+use App\Database\Connection\SQLiteAdapter;
 use Phractico\Core\Infrastructure\Database\Connection;
 use Phractico\Core\Infrastructure\Database\DatabaseProvider;
-use Phractico\Database\Connection\SQLiteAdapter;
 
 class ApplicationDatabaseProvider implements DatabaseProvider
 {

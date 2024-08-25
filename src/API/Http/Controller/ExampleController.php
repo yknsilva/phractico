@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Phractico\API\Http\Controller;
+namespace App\API\Http\Controller;
 
 use Phractico\Core\Facades\Database;
 use Phractico\Core\Facades\DatabaseOperation;

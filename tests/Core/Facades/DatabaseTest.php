@@ -2,13 +2,13 @@
 
 namespace Phractico\Tests\Core\Facades;
 
+use App\Database\Connection\SQLiteAdapter;
 use Phractico\Core\Facades\Database;
 use PHPUnit\Framework\TestCase;
 use Phractico\Core\Infrastructure\Database\DatabaseConnection;
 use Phractico\Core\Infrastructure\Database\Query\Param;
 use Phractico\Core\Infrastructure\Database\Query\ParamCollection;
 use Phractico\Core\Infrastructure\Database\Query\Statement;
-use Phractico\Database\Connection\SQLiteAdapter;
 
 class DatabaseTest extends TestCase
 {

@@ -2,9 +2,9 @@
 
 namespace Phractico\Tests\Core\Infrastructure\Database\Factory;
 
+use App\Tests\Helpers\Database\Connection\DummyDatabase;
 use PHPUnit\Framework\TestCase;
 use Phractico\Core\Infrastructure\Database\DatabaseConnection;
-use Phractico\Tests\Helpers\Database\Connection\DummyDatabase;
 
 class DatabaseConnectionTest extends TestCase
 {

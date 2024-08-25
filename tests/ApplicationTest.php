@@ -1,16 +1,16 @@
 <?php
 
-namespace Phractico\Tests;
+namespace App\Tests;
 
+use App\Application;
+use App\Tests\Helpers\API\Http\FakeController;
+use App\Tests\Helpers\Database\Connection\DummyDatabase;
 use GuzzleHttp\Psr7\Request;
 use PHPUnit\Framework\TestCase;
-use Phractico\Application;
 use Phractico\Core\Infrastructure\Database\DatabaseProvider;
 use Phractico\Core\Infrastructure\DI\Container;
 use Phractico\Core\Infrastructure\Http\ControllerProvider;
 use Phractico\Core\Infrastructure\Http\Request\HttpRequestInterceptor;
-use Phractico\Tests\Helpers\API\Http\FakeController;
-use Phractico\Tests\Helpers\Database\Connection\DummyDatabase;
 
 class ApplicationTest extends TestCase
 {
@@ -32,9 +32,9 @@ class ApplicationTest extends TestCase
             ->willReturn(new Request('POST', '/fake'));
 
         $container = Container::create();
-        $container->set(ControllerProvider::class, fn () => $controllerProviderStub);
-        $container->set(DatabaseProvider::class, fn () => $databaseProviderStub);
-        $container->set(HttpRequestInterceptor::class, fn () => $httpRequestInterceptorStub);
+        $container->set(ControllerProvider::class, fn() => $controllerProviderStub);
+        $container->set(DatabaseProvider::class, fn() => $databaseProviderStub);
+        $container->set(HttpRequestInterceptor::class, fn() => $httpRequestInterceptorStub);
 
         $fakeControllerResponse = $fakeController->fake()->render();
         $this->expectOutputString($fakeControllerResponse->getBody()->getContents());

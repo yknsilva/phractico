@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Phractico\Tests\Helpers\Database\Connection;
+namespace App\Tests\Helpers\Database\Connection;
 
 use Phractico\Core\Infrastructure\Database\Connection;
 use Phractico\Core\Infrastructure\Database\Query\Statement;

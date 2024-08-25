@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Phractico\Tests\Helpers\API\Http;
+namespace App\Tests\Helpers\API\Http;
 
 use Phractico\Core\Infrastructure\Http\Controller;
 use Phractico\Core\Infrastructure\Http\Request\Route;

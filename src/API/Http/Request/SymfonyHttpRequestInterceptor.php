@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Phractico\API\Http\Request;
+namespace App\API\Http\Request;
 
 use GuzzleHttp\Psr7\Request;
 use Phractico\Core\Infrastructure\Http\Request\HttpRequestInterceptor;

@@ -2,10 +2,10 @@
 
 namespace Phractico\Tests\Core\Infrastructure\Http\Request;
 
+use App\Tests\Helpers\API\Http\FakeController;
 use PHPUnit\Framework\TestCase;
 use Phractico\Core\Infrastructure\Http\Request\Route;
 use Phractico\Core\Infrastructure\Http\Request\RouteCollection;
-use Phractico\Tests\Helpers\API\Http\FakeController;
 
 class RouteCollectionTest extends TestCase
 {

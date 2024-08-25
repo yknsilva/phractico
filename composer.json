@@ -21,12 +21,14 @@
     },
     "autoload": {
         "psr-4": {
-            "Phractico\\": "src/"
+            "App\\": "src/",
+            "Phractico\\Core\\": "src/Core"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Phractico\\Tests\\": "tests/"
+            "App\\Tests\\": "tests/",
+            "Phractico\\Tests\\Core\\": "tests/Core"
         }
     },
     "scripts": {

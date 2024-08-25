@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Phractico\API\Http\Provider;
+namespace App\API\Http\Provider;
 
-use Phractico\API\Http\Controller\ExampleController;
+use App\API\Http\Controller\ExampleController;
 use Phractico\Core\Infrastructure\Http\ControllerProvider;
 
 class ApplicationControllerProvider implements ControllerProvider

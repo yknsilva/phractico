@@ -2,10 +2,10 @@
 
 namespace Phractico\Tests\Core\Infrastructure\Http\Request;
 
+use App\Tests\Helpers\API\Http\FakeController;
 use GuzzleHttp\Psr7\Request;
 use PHPUnit\Framework\TestCase;
 use Phractico\Core\Infrastructure\Http\Request\RouteHandler;
-use Phractico\Tests\Helpers\API\Http\FakeController;
 
 class RouteHandlerTest extends TestCase
 {

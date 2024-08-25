@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Phractico\Database\Connection;
+namespace App\Database\Connection;
 
 use Phractico\Core\Infrastructure\Database\Connection;
 use Phractico\Core\Infrastructure\Database\Query\Statement;
@@ -12,9 +12,7 @@ class SQLiteAdapter implements Connection
 {
     private \SQLite3 $connection;
 
-    public function __construct(private readonly string $databaseFilePath)
-    {
-    }
+    public function __construct(private readonly string $databaseFilePath) {}
 
     public function connect(): void
     {

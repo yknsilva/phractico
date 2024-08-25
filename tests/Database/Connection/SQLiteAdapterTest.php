@@ -1,12 +1,12 @@
 <?php
 
-namespace Phractico\Tests\Database\Connection;
+namespace App\Tests\Database\Connection;
 
+use App\Database\Connection\SQLiteAdapter;
 use PHPUnit\Framework\TestCase;
 use Phractico\Core\Infrastructure\Database\Query\Param;
 use Phractico\Core\Infrastructure\Database\Query\ParamCollection;
 use Phractico\Core\Infrastructure\Database\Query\Statement;
-use Phractico\Database\Connection\SQLiteAdapter;
 
 class SQLiteAdapterTest extends TestCase
 {

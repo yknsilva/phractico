@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Phractico;
+namespace App;
 
 use Phractico\Core\Bootstrap;
 use Phractico\Core\Infrastructure\Http\Request\HttpRequestInterceptor;

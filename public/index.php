@@ -1,7 +1,7 @@
 <?php
 
-use Phractico\Application;
-use Phractico\DI\ApplicationContainer;
+use App\Application;
+use App\DI\ApplicationContainer;
 
 require __DIR__ . '/../vendor/autoload.php';
 
