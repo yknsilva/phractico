@@ -70,13 +70,13 @@ phpctl server 8000 public/
 
 - Perform an HTTP request to ensure everything works fine!
 ```shell
-curl --location 'http://localhost:8000/example'
+curl -X GET 'http://localhost:8000/example'
 ```
 
 - Perform an HTTP request to ensure database connection works fine!
   - **Note:** `sqlite3` PHP extension is required for `SQLiteAdapter`
 ```shell
-curl --location --request GET 'http://localhost:8000/exampleDatabase' \
+curl -X POST 'http://localhost:8000/exampleDatabase' \
 --header 'Content-Type: application/json' \
 --data '{
     "test": "database"

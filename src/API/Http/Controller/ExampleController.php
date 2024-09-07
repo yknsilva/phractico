@@ -20,7 +20,7 @@ class ExampleController implements Controller
     {
         $routeCollection = RouteCollection::for($this);
         $routeCollection->add(Route::create('GET', '/example'), 'itWorks');
-        $routeCollection->add(Route::create('GET', '/exampleDatabase'), 'itWorksWithDatabase');
+        $routeCollection->add(Route::create('POST', '/exampleDatabase'), 'itWorksWithDatabase');
         return $routeCollection;
     }
 
@@ -35,6 +35,11 @@ class ExampleController implements Controller
 
     public function itWorksWithDatabase(): Response
     {
+        /**
+         * The following code is for example purposes only! :)
+         * Consider creating the right abstractions to handle database operations
+         */
+
         Database::execute(new Statement(
             "CREATE TABLE IF NOT EXISTS `tests`(`id` INTEGER PRIMARY KEY, `key` TEXT, `value` TEXT)"
         ));
