@@ -1,6 +1,10 @@
 # [About phractico](#about-phractico)
 
-Go fast with **_phractico_**, a PHP micro-project designed to accelerate your API projects with simplicity.
+🚀 Go fast with **_phractico_**, a PHP micro-project designed to accelerate your API projects with simplicity.
+
+```shell
+composer create-project yknsilva/phractico
+```
 
 # [Summary](#summary)
 
