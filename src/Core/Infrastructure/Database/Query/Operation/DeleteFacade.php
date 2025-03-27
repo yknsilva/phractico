@@ -20,14 +20,14 @@ class DeleteFacade implements Facade
         $this->params = ParamCollection::builder();
     }
 
-    public function where(string $column, Comparison $comparison, string $value): self
+    public function where(string $column, Comparison $comparison, mixed $value): self
     {
         $this->conditions[] = " WHERE $column {$comparison->operator()} :$column";
         $this->params->add(new Param(":$column", $value));
         return $this;
     }
 
-    public function andWhere(string $column, Comparison $comparisonOperator, string $value): self
+    public function andWhere(string $column, Comparison $comparisonOperator, mixed $value): self
     {
         $this->conditions[] = " AND $column {$comparisonOperator->operator()} :$column";
         $this->params->add(new Param(":$column", $value));
