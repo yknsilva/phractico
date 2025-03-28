@@ -8,7 +8,6 @@ readonly class Param
 {
     public function __construct(
         public string $key,
-        public string $value,
-    ) {
-    }
+        public mixed $value,
+    ) {}
 }
