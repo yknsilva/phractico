@@ -31,7 +31,7 @@ class RouteHandler
         RequestInterface $request
     ): ResponseInterface {
         $httpMethod = $request->getMethod();
-        $resource = $request->getRequestTarget();
+        $resource = $request->getUri();
         $route = Route::create($httpMethod, $resource);
 
         foreach (self::$stack as $controllerInstance => $controllerRouteMapping) {
